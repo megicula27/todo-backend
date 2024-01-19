@@ -5,8 +5,8 @@ export const connection = () => {
     .connect(process.env.MONGO_URI, {
       dbName: "todoDB",
     })
-    .then(() => {
-      console.log("Connected to MongoDB");
+    .then((c) => {
+      console.log("Connected to MongoDB with connection: " + c.connection.host);
     })
     .catch((err) => {
       console.log(err);
